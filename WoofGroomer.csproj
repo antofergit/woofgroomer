@@ -1,0 +1,729 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
+  <Import Project="packages\SQLite.3.13.0\build\net45\SQLite.props" Condition="Exists('packages\SQLite.3.13.0\build\net45\SQLite.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C91A9AC0-C242-4D84-8584-00CFEFAF7A7D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WoofGroomer</RootNamespace>
+    <AssemblyName>WoofGroomer</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>bows_dog_animal_15973.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>WoofGroomer.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>C:\Users\antof\OneDrive\Escritorio\Guna.UI-Framework-Lib-master\Guna.UI-Framework-Lib-master\Guna.UI2 WinForms\.net 4.0\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.EF6.1.0.113.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.Linq.1.0.113.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Conexion.cs" />
+    <Compile Include="ControlHoras.cs" />
+    <Compile Include="Dni.cs" />
+    <Compile Include="EncabezadoClientes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EncabezadoClientes.Designer.cs">
+      <DependentUpon>EncabezadoClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Exportar.cs" />
+    <Compile Include="FichaEmpleado.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FichaEmpleado.Designer.cs">
+      <DependentUpon>FichaEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FichaSala.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FichaSala.Designer.cs">
+      <DependentUpon>FichaSala.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioAcceso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioAcceso.Designer.cs">
+      <DependentUpon>FormularioAcceso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioAgenda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioAgenda.Designer.cs">
+      <DependentUpon>FormularioAgenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioBuscaArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioBuscaArticulo.Designer.cs">
+      <DependentUpon>FormularioBuscaArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioBuscarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioBuscarCliente.Designer.cs">
+      <DependentUpon>FormularioBuscarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioBuscarEstados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioBuscarEstados.Designer.cs">
+      <DependentUpon>FormularioBuscarEstados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioBuscarMascota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioBuscarMascota.Designer.cs">
+      <DependentUpon>FormularioBuscarMascota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioBuscarRaza.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioBuscarRaza.Designer.cs">
+      <DependentUpon>FormularioBuscarRaza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioBuscarTipoPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioBuscarTipoPago.Designer.cs">
+      <DependentUpon>FormularioBuscarTipoPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioClientes.Designer.cs">
+      <DependentUpon>FormularioClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioClientesMascotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioClientesMascotas.Designer.cs">
+      <DependentUpon>FormularioClientesMascotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioClientesMascotas2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioClientesMascotas2.Designer.cs">
+      <DependentUpon>FormularioClientesMascotas2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioComentariosHistorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioComentariosHistorial.Designer.cs">
+      <DependentUpon>FormularioComentariosHistorial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioConfiguracion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioConfiguracion.Designer.cs">
+      <DependentUpon>FormularioConfiguracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioControlEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioControlEmpleados.Designer.cs">
+      <DependentUpon>FormularioControlEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioError.Designer.cs">
+      <DependentUpon>FormularioError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioFicha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioFicha.Designer.cs">
+      <DependentUpon>FormularioFicha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioImporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioImporte.Designer.cs">
+      <DependentUpon>FormularioImporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioMensajeEliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioMensajeEliminar.Designer.cs">
+      <DependentUpon>FormularioMensajeEliminar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioNuevaMascota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioNuevaMascota.Designer.cs">
+      <DependentUpon>FormularioNuevaMascota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioNuevaVisita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioNuevaVisita.Designer.cs">
+      <DependentUpon>FormularioNuevaVisita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioNuevoArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioNuevoArticulo.Designer.cs">
+      <DependentUpon>FormularioNuevoArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioNuevoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioNuevoCliente.Designer.cs">
+      <DependentUpon>FormularioNuevoCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioObras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioObras.Designer.cs">
+      <DependentUpon>FormularioObras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioOK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioOK.Designer.cs">
+      <DependentUpon>FormularioOK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioPassword.Designer.cs">
+      <DependentUpon>FormularioPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioPrincipal.Designer.cs">
+      <DependentUpon>FormularioPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioProductosServicios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioProductosServicios.Designer.cs">
+      <DependentUpon>FormularioProductosServicios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioSala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioSala.Designer.cs">
+      <DependentUpon>FormularioSala.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioSeleccionaPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioSeleccionaPago.Designer.cs">
+      <DependentUpon>FormularioSeleccionaPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioTrabajo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioTrabajo.Designer.cs">
+      <DependentUpon>FormularioTrabajo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioTrimestre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioTrimestre.Designer.cs">
+      <DependentUpon>FormularioTrimestre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioVisitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioVisitas.Designer.cs">
+      <DependentUpon>FormularioVisitas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Generador.cs" />
+    <Compile Include="Generador2.cs" />
+    <Compile Include="ListadoClientes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListadoClientes.Designer.cs">
+      <DependentUpon>ListadoClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListaHistorial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ListaHistorial.Designer.cs">
+      <DependentUpon>ListaHistorial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mascotas.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Empleados.cs" />
+    <EmbeddedResource Include="EncabezadoClientes.resx">
+      <DependentUpon>EncabezadoClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FichaEmpleado.resx">
+      <DependentUpon>FichaEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FichaSala.resx">
+      <DependentUpon>FichaSala.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioAcceso.resx">
+      <DependentUpon>FormularioAcceso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioAgenda.resx">
+      <DependentUpon>FormularioAgenda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioBuscaArticulo.resx">
+      <DependentUpon>FormularioBuscaArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioBuscarCliente.resx">
+      <DependentUpon>FormularioBuscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioBuscarEstados.resx">
+      <DependentUpon>FormularioBuscarEstados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioBuscarMascota.resx">
+      <DependentUpon>FormularioBuscarMascota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioBuscarRaza.resx">
+      <DependentUpon>FormularioBuscarRaza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioBuscarTipoPago.resx">
+      <DependentUpon>FormularioBuscarTipoPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioClientes.resx">
+      <DependentUpon>FormularioClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioClientesMascotas.resx">
+      <DependentUpon>FormularioClientesMascotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioClientesMascotas2.resx">
+      <DependentUpon>FormularioClientesMascotas2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioComentariosHistorial.resx">
+      <DependentUpon>FormularioComentariosHistorial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioConfiguracion.resx">
+      <DependentUpon>FormularioConfiguracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioControlEmpleados.resx">
+      <DependentUpon>FormularioControlEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioError.resx">
+      <DependentUpon>FormularioError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioFicha.resx">
+      <DependentUpon>FormularioFicha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioImporte.resx">
+      <DependentUpon>FormularioImporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioMensajeEliminar.resx">
+      <DependentUpon>FormularioMensajeEliminar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioNuevaMascota.resx">
+      <DependentUpon>FormularioNuevaMascota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioNuevaVisita.resx">
+      <DependentUpon>FormularioNuevaVisita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioNuevoArticulo.resx">
+      <DependentUpon>FormularioNuevoArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioNuevoCliente.resx">
+      <DependentUpon>FormularioNuevoCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioObras.resx">
+      <DependentUpon>FormularioObras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioOK.resx">
+      <DependentUpon>FormularioOK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioPassword.resx">
+      <DependentUpon>FormularioPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioPrincipal.resx">
+      <DependentUpon>FormularioPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioProductosServicios.resx">
+      <DependentUpon>FormularioProductosServicios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioSala.resx">
+      <DependentUpon>FormularioSala.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioSeleccionaPago.resx">
+      <DependentUpon>FormularioSeleccionaPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioTrabajo.resx">
+      <DependentUpon>FormularioTrabajo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioTrimestre.resx">
+      <DependentUpon>FormularioTrimestre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioVisitas.resx">
+      <DependentUpon>FormularioVisitas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListadoClientes.resx">
+      <DependentUpon>ListadoClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaHistorial.resx">
+      <DependentUpon>ListaHistorial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bows_dog_animal_15973.ico" />
+    <None Include="Resources\terrier_norwich.jpg" />
+    <None Include="Resources\terrier_irlandes.jpg" />
+    <None Include="Resources\terrier_gales.jpg" />
+    <None Include="Resources\terrier_escoces.jpg" />
+    <None Include="Resources\terrier_de_airedale.jpg" />
+    <None Include="Resources\terrier_checo.jpg" />
+    <None Include="Resources\terrier_australiano.jpg" />
+    <None Include="Resources\terranova.jpg" />
+    <None Include="Resources\sussex_spaniel.jpg" />
+    <None Include="Resources\staffordshire_bull_terrier.jpg" />
+    <None Include="Resources\springer_spaniel_ingles.jpg" />
+    <None Include="Resources\springer_spaniel_gales.jpg" />
+    <None Include="Resources\spitz_japones.jpg" />
+    <None Include="Resources\spitz_finlandes.jpg" />
+    <None Include="Resources\spitz_aleman_pequeño.jpg" />
+    <None Include="Resources\spitz_aleman_medio.jpg" />
+    <None Include="Resources\spinone_italiano.jpg" />
+    <None Include="Resources\spaniel_tibetano.jpg" />
+    <None Include="Resources\spaniel_holandes.jpg" />
+    <None Include="Resources\soft_coated_wheaten_terrier.jpg" />
+    <None Include="Resources\skye_terrier.jpg" />
+    <None Include="Resources\sin_raza_especifica.png" />
+    <None Include="Resources\shih_tzu.jpg" />
+    <None Include="Resources\shiba_inu_japones.jpg" />
+    <None Include="Resources\shar_pei.jpg" />
+    <None Include="Resources\setter_irlandes_rojo_y_blanco.jpg" />
+    <None Include="Resources\setter_irlandes.jpg" />
+    <None Include="Resources\setter_ingles.jpg" />
+    <None Include="Resources\setter_escoces.jpg" />
+    <None Include="Resources\sealyham_terrier.jpg" />
+    <None Include="Resources\schnauzer_miniatura.jpg" />
+    <None Include="Resources\schnauzer_gigante.jpg" />
+    <None Include="Resources\schnauzer_estandar.jpg" />
+    <None Include="Resources\schipperke.jpg" />
+    <None Include="Resources\san_bernardo.jpg" />
+    <None Include="Resources\samoyedo.jpg" />
+    <None Include="Resources\sabueso_italiano.jpg" />
+    <None Include="Resources\sabueso_bavaro_de_montaña.jpg" />
+    <None Include="Resources\rough_collie.jpg" />
+    <None Include="Resources\rottweiler.jpg" />
+    <None Include="Resources\rhodesian_ridgeback.jpg" />
+    <None Include="Resources\retriever_de_pelo_rizado.jpg" />
+    <None Include="Resources\retriever_de_pelo_liso.jpg" />
+    <None Include="Resources\retriever_de_chesapeake.jpg" />
+    <None Include="Resources\puli_hungaro.jpg" />
+    <None Include="Resources\pomerania.jpg" />
+    <None Include="Resources\pointer.jpg" />
+    <None Include="Resources\podenco_ibicenco.jpg" />
+    <None Include="Resources\pinscher_miniatura.jpg" />
+    <None Include="Resources\pinscher_aleman.jpg" />
+    <None Include="Resources\perro_serra_da_estrela.jpg" />
+    <None Include="Resources\perro_salchicha_miniatura_de_pelo_liso.jpg" />
+    <None Include="Resources\perro_salchicha_miniatura_de_pelo_largo.jpg" />
+    <None Include="Resources\perro_salchicha_miniatura_de_pelo_duro.jpg" />
+    <None Include="Resources\perro_salchicha_de_pelo_liso.jpg" />
+    <None Include="Resources\perro_salchicha_de_pelo_duro.jpg" />
+    <None Include="Resources\perro_del_faraon.jpg" />
+    <None Include="Resources\perro_de_montaña_de_los_pirineos.jpg" />
+    <None Include="Resources\perro_de_canaan.jpg" />
+    <None Include="Resources\perro_de_agua_potugues.jpg" />
+    <None Include="Resources\Perro_de_agua_irlandes.jpg" />
+    <None Include="Resources\perro_de_agua_español.jpg" />
+    <None Include="Resources\pastor_polaco_de_las_llanuras.jpg" />
+    <None Include="Resources\pastor_lapon_de_suecia.jpg" />
+    <None Include="Resources\pastor_ganadero.jpg" />
+    <None Include="Resources\pastor_de_shetland.jpg" />
+    <None Include="Resources\pastor_de_maremma.jpg" />
+    <None Include="Resources\pastor_de_los_pirineos.jpg" />
+    <None Include="Resources\pastor_de_brie.jpg" />
+    <None Include="Resources\pastor_de_anatolia.jpg" />
+    <None Include="Resources\pastor_belga_tervueren.jpg" />
+    <None Include="Resources\pastor_belga_malinois.jpg" />
+    <None Include="Resources\pastor_belga_laekenois.jpg" />
+    <None Include="Resources\pastor_belga.jpg" />
+    <None Include="Resources\pastor_australiano.jpg" />
+    <None Include="Resources\pastor_aleman.jpg" />
+    <None Include="Resources\parson_jack_russell_terrier.jpg" />
+    <None Include="Resources\papillon.jpg" />
+    <None Include="Resources\otterhound.jpg" />
+    <None Include="Resources\norfolk_terrier.jpg" />
+    <None Include="Resources\munsterlander.jpg" />
+    <None Include="Resources\mastin_tibetano.jpg" />
+    <None Include="Resources\mastin_napolitano.jpg" />
+    <None Include="Resources\mastin_ingles.jpg" />
+    <None Include="Resources\manchester_terrier.jpg" />
+    <None Include="Resources\maltes.jpg" />
+    <None Include="Resources\malinois.jpg" />
+    <None Include="Resources\malamute_de_alaska.jpg" />
+    <None Include="Resources\lowchen.jpg" />
+    <None Include="Resources\lobero_irlandes.jpg" />
+    <None Include="Resources\lhasa_apso.jpg" />
+    <None Include="Resources\leonberger.jpg" />
+    <None Include="Resources\lebrel_escoces.jpg" />
+    <None Include="Resources\lancashire_heeler.jpg" />
+    <None Include="Resources\lakeland_terrier.jpg" />
+    <None Include="Resources\laekenois.jpg" />
+    <None Include="Resources\labarador_retriever.jpg" />
+    <None Include="Resources\kuvasz_hungaro.jpg" />
+    <None Include="Resources\komondor.jpg" />
+    <None Include="Resources\king_charles_spaniel.jpg" />
+    <None Include="Resources\kerry_blue_terrier.jpg" />
+    <None Include="Resources\keeshond.jpg" />
+    <None Include="Resources\husky_siberiano.jpg" />
+    <None Include="Resources\havawart.jpg" />
+    <None Include="Resources\hamilton_stovare.jpg" />
+    <None Include="Resources\habanero.jpg" />
+    <None Include="Resources\grifon_vandeano_basset_pequeño.jpg" />
+    <None Include="Resources\grifon_vandeano_basset.jpg" />
+    <None Include="Resources\grifon_de_bruselas.jpg" />
+    <None Include="Resources\grifon_belga.jpg" />
+    <None Include="Resources\gran_danes.jpg" />
+    <None Include="Resources\gran_azul_de_gascuña.jpg" />
+    <None Include="Resources\golden_retriever.jpg" />
+    <None Include="Resources\galgo_persa.jpg" />
+    <None Include="Resources\galgo_italiano.jpg" />
+    <None Include="Resources\galgo_arabe.jpg" />
+    <None Include="Resources\galgo.jpg" />
+    <None Include="Resources\foxhound.jpg" />
+    <None Include="Resources\fox_terrier_de_pelo_liso.jpg" />
+    <None Include="Resources\fox_terrier_de_pelo_duro.jpg" />
+    <None Include="Resources\finlandes_de_laponia.jpg" />
+    <None Include="Resources\field_spaniel.jpg" />
+    <None Include="Resources\esquimal_canadiense.jpg" />
+    <None Include="Resources\dogo_de_burdeos.jpg" />
+    <None Include="Resources\dobermann.jpg" />
+    <None Include="Resources\dandie_dinmont_terrier.jpg" />
+    <None Include="Resources\dalmata.jpg" />
+    <None Include="Resources\dachshund.jpg" />
+    <None Include="Resources\crestado_chino.jpg" />
+    <None Include="Resources\coton_de_tulear.jpg" />
+    <None Include="Resources\corgi_gales_de_pembroke.jpg" />
+    <None Include="Resources\corgi_gales.jpg" />
+    <None Include="Resources\collie_de_pelo_corto.jpg" />
+    <None Include="Resources\collie_barbudo.jpg" />
+    <None Include="Resources\cocker_espaniel_ingles.jpg" />
+    <None Include="Resources\cocker_espaniel_americano.jpg" />
+    <None Include="Resources\cobrador_de_nueva_escocia.jpg" />
+    <None Include="Resources\clumber_spaniel.jpg" />
+    <None Include="Resources\chow_chow_de_pelo_suave.jpg" />
+    <None Include="Resources\chow_chow_de_pelo_duro.jpg" />
+    <None Include="Resources\chin_japones.jpg" />
+    <None Include="Resources\chihuahua_de_pelo_largo.jpg" />
+    <None Include="Resources\chihuahua.jpg" />
+    <None Include="Resources\cazador_de_alces_noruego.jpg" />
+    <None Include="Resources\cavalier_king_charles_spaniel.jpg" />
+    <None Include="Resources\carlino.jpg" />
+    <None Include="Resources\caniche_toy.jpg" />
+    <None Include="Resources\caniche_grande.jpg" />
+    <None Include="Resources\caniche_eneno.jpg" />
+    <None Include="Resources\cairn_terrier.jpg" />
+    <None Include="Resources\bullmastiff.jpg" />
+    <None Include="Resources\bulldog_frances.jpg" />
+    <None Include="Resources\bulldog.jpg" />
+    <None Include="Resources\bull_terrier_miniatura.jpg" />
+    <None Include="Resources\bull_terrier.jpg" />
+    <None Include="Resources\buhund_noruego.jpg" />
+    <None Include="Resources\breton.jpg" />
+    <None Include="Resources\braco_hungaro_de_pelo_duro.jpg" />
+    <None Include="Resources\braco_hungaro.jpg" />
+    <None Include="Resources\braco_de_weimar.jpg" />
+    <None Include="Resources\braco_aleman_de_pelo_duro.jpg" />
+    <None Include="Resources\braco_aleman_de_pelo_corto.jpg" />
+    <None Include="Resources\bracco_italiano.jpg" />
+    <None Include="Resources\boyero_de_flandes.jpg" />
+    <None Include="Resources\boyero_de_berna.jpg" />
+    <None Include="Resources\boxer.jpg" />
+    <None Include="Resources\boston_terrier.jpg" />
+    <None Include="Resources\borzoi.png" />
+    <None Include="Resources\border_terrier.jpg" />
+    <None Include="Resources\border_collie.jpg" />
+    <None Include="Resources\bobtail_o_antiguo_pastor_ingles.jpg" />
+    <None Include="Resources\bichon_frise.jpg" />
+    <None Include="Resources\bichon_boloñes.jpg" />
+    <None Include="Resources\bergamasco.jpg" />
+    <None Include="Resources\bedlington_terrier.jpg" />
+    <None Include="Resources\beauceron.jpg" />
+    <None Include="Resources\beagle.jpg" />
+    <None Include="Resources\basset_leonado_de_bretaña.jpg" />
+    <None Include="Resources\basset_hound.jpg" />
+    <None Include="Resources\basset_azul_de_gascuña.jpg" />
+    <None Include="Resources\basenji.jpg" />
+    <None Include="Resources\akita_japones.jpg" />
+    <None Include="Resources\afgano.jpg" />
+    <None Include="Resources\affenpinscher.jpg" />
+    <None Include="Resources\yorkshire_terrier.jpg" />
+    <None Include="Resources\xoloitzcuintle.jpg" />
+    <None Include="Resources\whippet.jpg" />
+    <None Include="Resources\west_highland_white_terrier.jpg" />
+    <None Include="Resources\vallhund_sueco.jpg" />
+    <None Include="Resources\toy_terrier_ingles.jpg" />
+    <None Include="Resources\terrier_tibetano.jpg" />
+    <None Include="Resources\terrier_sedoso_australiano.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\SQLite.3.13.0\build\net45\SQLite.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\SQLite.3.13.0\build\net45\SQLite.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
+  <Import Project="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.113.3\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+</Project>
